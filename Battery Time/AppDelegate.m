@@ -92,7 +92,7 @@
         NSInteger remainMinutes = interval % 3600;
         NSInteger minutes = remainMinutes / 60;
 
-        NSString *timeString = [[NSString alloc] initWithFormat:NSLocalizedString(@"%ld:%ld Remaining", @"电池剩余使用时间: %ld:%ld"), (long)hours, (long)minutes];
+        NSString *timeString = [[NSString alloc] initWithFormat:NSLocalizedString(@"%02ld:%02ld Remaining", @"电池剩余使用时间: %02ld:%02ld"), (long)hours, (long)minutes];
         return timeString;
     }
 }

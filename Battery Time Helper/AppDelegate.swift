@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         pathComponents.removeSubrange((pathComponents.count - 4)..<pathComponents.count)
         let path = NSString.path(withComponents: pathComponents)
         if !isMainAppRunning() {
-            NSWorkspace.shared().launchApplication(path)
+            NSWorkspace.shared.launchApplication(path)
         }
         NSApp.terminate(nil)
     }
@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Private Helper
     private func isMainAppRunning() -> Bool {
         guard let mainIdentifier = mainBundleIdentifier() else { return false }
-        return (NSWorkspace.shared().runningApplications.filter { $0.bundleIdentifier == mainIdentifier }).count > 0
+        return (NSWorkspace.shared.runningApplications.filter { $0.bundleIdentifier == mainIdentifier }).count > 0
     }
 
     private func mainBundleIdentifier() -> String? {
